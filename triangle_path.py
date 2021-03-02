@@ -1,8 +1,16 @@
-# 모든 경로 중 포함된 숫자의 최대 합을 찾는 프로그램을 작성하세요
+"""
+분류: 동적 계획법
+문제: 모든 경로 중 포함된 숫자의 최대 합을 찾는 프로그램을 작성하세요
 
-# 재귀로도 구현 가능하고 반복문으로도 구현 가능하다
-# 둘다 구해보자
+포인트
+1) 문제 풀이 클래스 구조
+2) 점화식 > 재귀문
+3) Cache 사용
+"""
 
+"""
+문제 인식해서 TriangleSolver로 실제 문제를 푼다.
+"""
 class Solver:
     def __init__(self,problem):
         self.triangles = self.__understand_problem(problem)
@@ -31,6 +39,9 @@ class Solver:
         triangle = [list(map(int,line.split())) for line in triangle_in_str]
         return triangle, start+n+1
 
+"""
+실제 문제를 푼다.
+"""
 class TriangleSolver:
     def __init__(self,triangle):
         self.triangle = triangle
